@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0e">
+  <title>FIRE STORE — Recargas Free Fire</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">F</span><span>FIRE<span class="red">STORE</span><small>RECARGAS GAMING</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+    <nav id="nav">
+      <a href="#inicio">Inicio</a><a href="#recargas">Recargas</a><a href="#como-funciona">Cómo funciona</a>
+    </nav>
+    <button class="btn btn-outline" id="loginOpen">Iniciar sesión</button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> TU PUNTO DE RECARGA GAMING</div>
+        <h1>SUBE DE NIVEL.<br><span class="red">DOMINA EL JUEGO.</span></h1>
+        <p>Explora los paquetes de diamantes de Free Fire y solicita tu recarga de forma sencilla a través de nuestra comunidad.</p>
+        <div class="hero-actions"><a class="btn btn-red" href="#recargas">Ver paquetes <span>↗</span></a><a class="btn btn-ghost" href="https://discord.gg/DF52prxgN" target="_blank" rel="noopener">Unirme a Discord</a></div>
+        <div class="hero-note"><span>●</span> Pedidos gestionados manualmente por el equipo.</div>
+      </div>
+      <div class="hero-art" aria-label="Decoración gamer">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="hero-emblem"><div class="emblem-inner">FF</div></div>
+        <div class="floating-tag tag-top">FIRE STORE <b>✦</b></div>
+        <div class="floating-tag tag-bottom"><span class="red">●</span> COMMUNITY POWER</div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><b>01</b><span>Elige tu paquete</span></div><div><b>02</b><span>Envía tu solicitud</span></div><div><b>03</b><span>Coordina por Discord</span></div>
+    </section>
+
+    <section class="section" id="recargas">
+      <div class="section-heading"><div><div class="eyebrow">CATÁLOGO</div><h2>PAQUETES DE <span class="red">DIAMANTES</span></h2></div><p>Selecciona un paquete para preparar tu pedido.</p></div>
+      <div class="notice"><span>ⓘ</span> Los precios y la disponibilidad deben ser confirmados por el administrador antes de pagar.</div>
+      <div class="products" id="products"></div>
+    </section>
+
+    <section class="how section" id="como-funciona">
+      <div class="eyebrow">FÁCIL Y DIRECTO</div><h2>¿CÓMO <span class="red">FUNCIONA?</span></h2>
+      <div class="steps">
+        <article><span>01</span><h3>Escoge</h3><p>Selecciona el paquete que deseas solicitar.</p></article>
+        <article><span>02</span><h3>Prepara tu pedido</h3><p>Escribe tu ID de jugador. Nunca compartas tu contraseña.</p></article>
+        <article><span>03</span><h3>Contacta al equipo</h3><p>Envía los detalles por nuestro servidor de Discord.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">F</span><span>FIRE<span class="red">STORE</span><small>RECARGAS GAMING</small></span></a><span>Proyecto comunitario independiente. No afiliado ni respaldado por Garena.</span><a href="https://discord.gg/DF52prxgN" target="_blank" rel="noopener">Comunidad Discord ↗</a></footer>
+
+  <div class="modal-backdrop" id="orderModal" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+      <button class="close" data-close="orderModal" aria-label="Cerrar">×</button>
+      <div class="eyebrow">NUEVA SOLICITUD</div><h2 id="orderTitle">PREPARA TU <span class="red">PEDIDO</span></h2>
+      <p class="muted">Esto no realiza ningún cobro. La solicitud se coordina manualmente con el equipo.</p>
+      <label>Paquete seleccionado<input id="selectedPack" readonly></label>
+      <label>ID de jugador (UID)<input id="playerId" inputmode="numeric" placeholder="Escribe tu UID de Free Fire"></label>
+      <label>Tu usuario de Discord (opcional)<input id="discordName" placeholder="Ej. usuario"></label>
+      <div class="modal-actions"><button class="btn btn-red full" id="sendOrder">Preparar mensaje para Discord</button></div>
+      <p class="tiny">No introduzcas contraseñas, códigos de verificación ni datos de acceso de tu cuenta.</p>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="loginModal" aria-hidden="true">
+    <section class="modal small-modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+      <button class="close" data-close="loginModal" aria-label="Cerrar">×</button>
+      <div class="eyebrow">ÁREA DE USUARIO</div><h2 id="loginTitle">BIENVENIDO A <span class="red">FIRE STORE</span></h2>
+      <p class="muted">El acceso real se activará cuando se configure un servidor de autenticación seguro.</p>
+      <button class="btn discord-btn full" id="discordLogin">Continuar con Discord <span>↗</span></button>
+      <div class="separator"><span>o</span></div>
+      <button class="btn btn-outline full" id="emailLogin">Cuenta con correo</button>
+      <p class="tiny">No escribas tu contraseña aquí. Discord se conectará mediante OAuth2 oficial; el acceso por correo requiere un proveedor de autenticación.</p>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
